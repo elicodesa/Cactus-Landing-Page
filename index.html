@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cactus Restaurant – Modern Luxury Dining</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body { 
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+    
+    /* Carousel Base Styles */
+    .reviews-section, .photo-carousel-section {
+      padding: 80px 20px;
+      background: #0a0a0a;
+      color: white;
+      text-align: center;
+    }
+    
+    .reviews-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .lux-title {
+      color: gold;
+      font-size: 32px;
+      margin-bottom: 40px;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+    
+    /* Review Carousel */
+    .luxury-carousel {
+      position: relative;
+      overflow: hidden;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    
+    .review-item {
+      min-width: 100%;
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      padding: 40px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      background: #1a1a1a;
+      box-sizing: border-box;
+    }
+    
+    .review-item p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #e0e0e0;
+    }
+    
+    .review-item span {
+      color: #999;
+      font-size: 14px;
+    }
+    
+    .stars {
+      color: gold;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    
+    /* Carousel Buttons */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 215, 0, 0.2);
+      color: gold;
+      border: none;
+      padding: 15px 20px;
+      cursor: pointer;
+      font-size: 24px;
+      border-radius: 8px;
+      transition: all 0.3s;
+      z-index: 10;
+    }
+    
+    .carousel-btn:hover {
+      background: rgba(255, 215, 0, 0.4);
+    }
+    
+    .carousel-btn.prev {
+      left: -60px;
+    }
+    
+    .carousel-btn.next {
+      right: -60px;
+    }
+    
+    @media (max-width: 768px) {
+      .carousel-btn.prev {
+        left: 10px;
+      }
+      .carousel-btn.next {
+        right: 10px;
+      }
+    }
+    
+    /* Photo Carousel */
+    .photo-carousel {
+      position: relative;
+      overflow: hidden;
+      max-width: 1000px;
+      margin: 0 auto;
+      border-radius: 18px;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+    }
+    
+    .photo-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    
+    .photo-item {
+      min-width: 100%;
+      height: 500px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+    
+    @media (max-width: 768px) {
+      .photo-item {
+        height: 350px;
+      }
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- HERO -->
+  <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+    <img src="images/hero.jpg" class="absolute inset-0 w-full h-full object-cover scale-110 opacity-70" alt="Cactus Restaurant interior view" />
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <div class="relative z-10 text-center max-w-3xl px-6">
+      <h1 class="text-5xl md:text-6xl font-semibold text-white mb-4 tracking-tight">Lagoon-Side Luxury Dining</h1>
+      <p class="text-gray-200 text-lg md:text-xl mb-8 leading-relaxed">Where elegance meets comfort. Enjoy handcrafted meals, premium cocktails, and a serene waterfront ambience at Cactus Restaurant.</p>
+      <a href="#menu" class="px-8 py-4 bg-white text-gray-900 rounded-full font-semibold hover:bg-gray-100 transition">Explore Menu</a>
+    </div>
+  </section>
+
+  <!-- SIGNATURE STATEMENT -->
+  <section class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto text-center px-6">
+      <h2 class="text-4xl font-semibold mb-6 tracking-tight">Taste, Atmosphere & Comfort</h2>
+      <p class="text-gray-600 text-lg leading-relaxed">Cactus Restaurant delivers a refined dining experience featuring international dishes, grills, pastries, and a peaceful lagoon-side escape in the heart of Victoria Island, Lagos.</p>
+    </div>
+  </section>
+
+  <!-- FEATURED IMAGES -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-6">
+      <img src="images/interior1.jpg" class="rounded-2xl object-cover h-72 w-full" alt="Cactus Restaurant interior" />
+      <img src="images/interior2.jpg" class="rounded-2xl object-cover h-72 w-full" alt="Cactus Restaurant dining area" />
+      <img src="images/interior3.jpg" class="rounded-2xl object-cover h-72 w-full" alt="Cactus Restaurant ambiance" />
+    </div>
+  </section>
+
+  <!-- MENU SECTION -->
+  <section id="menu" class="py-24 bg-white">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-semibold mb-10">Curated Menu Highlights</h2>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+      <div class="p-10 bg-gray-50 rounded-2xl shadow-sm hover:shadow-md transition text-center">
+        <h3 class="text-2xl font-semibold mb-4">Seafood Collection</h3>
+        <p class="text-gray-600">Freshly sourced, expertly seasoned – premium seafood grilled to perfection.</p>
+      </div>
+      <div class="p-10 bg-gray-50 rounded-2xl shadow-sm hover:shadow-md transition text-center">
+        <h3 class="text-2xl font-semibold mb-4">Continental Classics</h3>
+        <p class="text-gray-600">Pasta, burgers, sandwiches, and comfort selections for every taste.</p>
+      </div>
+      <div class="p-10 bg-gray-50 rounded-2xl shadow-sm hover:shadow-md transition text-center">
+        <h3 class="text-2xl font-semibold mb-4">Desserts & Pastries</h3>
+        <p class="text-gray-600">Delicate cakes, pastries, ice cream scoops, and signature sweets.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNATURE DISHES CAROUSEL -->
+  <section class="photo-carousel-section">
+    <h2 class="lux-title">Signature Dishes</h2>
+    <div class="photo-carousel">
+      <button class="carousel-btn prev photo-prev" aria-label="Previous photo">&#10094;</button>
+      <div class="photo-track">
+        <img src="images/burger.jpg" class="photo-item" alt="Gourmet burger" />
+        <img src="images/icecream.jpg" class="photo-item" alt="Ice cream desserts" />
+        <img src="images/pasta.jpg" class="photo-item" alt="Fresh pasta" />
+        <img src="images/sandwich.jpg" class="photo-item" alt="Gourmet sandwich" />
+      </div>
+      <button class="carousel-btn next photo-next" aria-label="Next photo">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- REVIEWS CAROUSEL -->
+  <section class="reviews-section luxury-reviews">
+    <div class="reviews-container">
+      <h2 class="lux-title">Guest Experiences</h2>
+
+      <div class="luxury-carousel">
+        <button class="carousel-btn prev review-prev" aria-label="Previous review">&#10094;</button>
+        <div class="carousel-track review-track">
+
+          <div class="review-item">
+            <div class="stars">★★★★★</div>
+            <p>"A must‑visit in Lagos. The ambience is unmatched and the waterfront view is breathtaking."</p>
+            <span>- TripAdvisor Review</span>
+          </div>
+
+          <div class="review-item">
+            <div class="stars">★★★★★</div>
+            <p>"Beautiful location, amazing service and the desserts are unforgettable."</p>
+            <span>- TripAdvisor Review</span>
+          </div>
+
+          <div class="review-item">
+            <div class="stars">★★★★☆</div>
+            <p>"Cozy, classy and perfect for dates or group dining. One of my favorite spots."</p>
+            <span>- TripAdvisor Review</span>
+          </div>
+
+        </div>
+        <button class="carousel-btn next review-next" aria-label="Next review">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="py-24 bg-gray-900 text-white text-center">
+    <h2 class="text-4xl font-semibold mb-4">Reserve Your Table</h2>
+    <p class="text-gray-300 text-lg mb-8">Enjoy an unforgettable dining experience with waterfront views.</p>
+    <a href="#contact" class="bg-white text-gray-900 px-10 py-4 rounded-full font-semibold hover:bg-gray-100 transition">Book Now</a>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto text-center px-6">
+      <h2 class="text-4xl font-semibold mb-6">Location & Hours</h2>
+      <p class="text-gray-600 text-lg mb-4">20/24 Ozumba Mbadiwe Avenue, Victoria Island, Lagos</p>
+      <p class="text-gray-600 mb-6">Open Daily: 7:30 AM – 10:30 PM</p>
+      <a href="tel:+2340000000000" class="px-8 py-4 bg-gray-900 text-white rounded-full font-semibold hover:bg-gray-700 transition">Call to Reserve</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 bg-black text-gray-500 text-center">
+    <p>© 2025 Cactus Restaurant — Modern Luxury Dining</p>
+  </footer>
+
+  <script>
+    // Review carousel
+    const reviewTrack = document.querySelector('.review-track');
+    const reviewItems = Array.from(reviewTrack.children);
+    const reviewNextBtn = document.querySelector('.review-next');
+    const reviewPrevBtn = document.querySelector('.review-prev');
+    let reviewIndex = 0;
+
+    function updateReviewCarousel() {
+      reviewTrack.style.transform = `translateX(-${reviewIndex * 100}%)`;
+    }
+
+    reviewNextBtn.addEventListener('click', () => {
+      reviewIndex = (reviewIndex + 1) % reviewItems.length;
+      updateReviewCarousel();
+    });
+
+    reviewPrevBtn.addEventListener('click', () => {
+      reviewIndex = (reviewIndex - 1 + reviewItems.length) % reviewItems.length;
+      updateReviewCarousel();
+    });
+
+    // Auto-slide reviews
+    setInterval(() => {
+      reviewIndex = (reviewIndex + 1) % reviewItems.length;
+      updateReviewCarousel();
+    }, 5000);
+
+    // Photo carousel
+    const photoTrack = document.querySelector('.photo-track');
+    const photos = Array.from(photoTrack.children);
+    const nextPhoto = document.querySelector('.photo-next');
+    const prevPhoto = document.querySelector('.photo-prev');
+    let photoIndex = 0;
+
+    function updatePhotoCarousel() {
+      photoTrack.style.transform = `translateX(-${photoIndex * 100}%)`;
+    }
+
+    nextPhoto.addEventListener('click', () => {
+      photoIndex = (photoIndex + 1) % photos.length;
+      updatePhotoCarousel();
+    });
+
+    prevPhoto.addEventListener('click', () => {
+      photoIndex = (photoIndex - 1 + photos.length) % photos.length;
+      updatePhotoCarousel();
+    });
+
+    // Tap/click on images to advance
+    photos.forEach(photo => {
+      photo.addEventListener('click', () => {
+        photoIndex = (photoIndex + 1) % photos.length;
+        updatePhotoCarousel();
+      });
+    });
+
+    // Auto-slide photos
+    setInterval(() => {
+      photoIndex = (photoIndex + 1) % photos.length;
+      updatePhotoCarousel();
+    }, 6000);
+  </script>
+
+</body>
+</html>
